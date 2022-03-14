@@ -1,4 +1,24 @@
 - commits:
+    - subject: Prepare for prerelease & build parts in the release.semver field
+      hash: 6dd07fb595986f7ce544a98796fde1c5e4f987ac
+      body: ""
+      footer:
+        Connects-to: "#827"
+        connects-to: "#827"
+        Change-type: minor
+        change-type: minor
+        HQ: https://github.com/balena-io/balena-api/issues/3291
+        hq: https://github.com/balena-io/balena-api/issues/3291
+        See: https://jel.ly.fish/product-improvement-draft-releases-and-release-versioning-d0391f45-c2f9-4f4e-b964-1a7e9023a3f4
+        see: https://jel.ly.fish/product-improvement-draft-releases-and-release-versioning-d0391f45-c2f9-4f4e-b964-1a7e9023a3f4
+        Signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      author: Thodoris Greasidis
+      nested: []
+  version: 0.197.0
+  title: "'Prepare for prerelease & build parts in the release.semver field'"
+  date: 2022-03-14T14:16:41.771Z
+- commits:
     - subject: "registry: Only resolve releases with one service"
       hash: 86b68dea2c03a24658489c90afe42049565a5667
       body: |
