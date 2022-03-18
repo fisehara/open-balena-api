@@ -1,17 +1,6 @@
 #!/bin/bash
 set -e
 
-CONFIG_FILE="$(pwd)/.fasttest"
-
-. "$(dirname $0)/common.sh"
-
-db_id=$(sed -n "1{p;q;}" "$CONFIG_FILE" 2>/dev/null) || true
-redis_id=$(sed -n "2{p;q;}" "$CONFIG_FILE" 2>/dev/null) || true
-loki_id=$(sed -n "3{p;q;}" "$CONFIG_FILE" 2>/dev/null) || true
-api_id=$(sed -n "4{p;q;}" "$CONFIG_FILE" 2>/dev/null) || true
-
-
-external=''
 test_versions=''
 test_files=''
 teardown=0
@@ -23,17 +12,23 @@ while [[ $# -gt 0 ]]; do
 	key=$1
 	shift
 	case $key in
+		--without-external)
+			extra_env="${extra_env} --env DB_ANALYTICS_PASSWORD= "
+		;;
 		--teardown)
 			teardown=1
 		;;
-		--stop)
-			stop=1
+		--rebuild)
+			docker-compose build
+		;;
+		--cleannode)
+			cleannode=1
 		;;
 		--long-stack)
 			extra_env="${extra_env} --env BLUEBIRD_LONG_STACK_TRACES=1"
 		;;
 		--debug)
-			extra_env="${extra_env} --env DEBUG=1"
+			extra_env="${extra_env} --env PINEJS_DEBUG=1"
 		;;
 		--profile)
 			extra_args="${extra_args} --inspect-brk=0.0.0.0"
@@ -44,6 +39,16 @@ while [[ $# -gt 0 ]]; do
 			extra_env="${extra_env} --env GENERATE_CONFIG=$1"
 			shift
 		;;
+		--generate-config-version)
+			echo "Generating config for model version $1"
+			echo
+			extra_env="${extra_env} --env GENERATE_CONFIG_VERSION=$1"
+			shift
+		;;
+		-v | --version)
+			test_versions="$test_versions $1"
+			shift
+		;;
 		*)
 			test_files="$test_files $key"
 		;;
@@ -51,70 +56,40 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ $teardown -eq 1 ]]; then
-	echo 'Tearing down test environment...'
-	teardown $IMAGE_NAME $db_id $redis_id $loki_id $api_id
-	rm "$CONFIG_FILE" 2>/dev/null || true
+	echo "Tearing down test environment..."
+	docker-compose down
 	exit 0
 fi
 
-if [[ $stop -eq 1 ]]; then
-	echo 'Stopping test environment containers...'
-	docker stop $api_id $db_id $redis_id $loki_id 2>/dev/null || true
-	exit 0
+echo "Start up fasttest api and dependings"
+# starts automatically redis
+docker-compose up -d api-fasttest
+
+echo "Clearing Redis"
+docker-compose exec redis /bin/sh -c "redis-cli flushall"
+
+echo "Clearing database"
+while ! docker-compose exec db /bin/sh -c "psql --username=docker --dbname=postgres --command='DROP SCHEMA \"public\" CASCADE; CREATE SCHEMA \"public\";' "; do
+  echo "waiting for postgress listening..."
+  sleep 0.1
+done
+
+
+if [[ $cleannode -eq 1 ]]; then
+	echo "Rebuilding node environment ..."
+	docker-compose exec api-fasttest /bin/sh -c 'npm ci && npm rebuild'
 fi
 
-if [ -z "$db_id" ] || [ -z "$redis_id" ] || [ -z "$loki_id" ] || [ -z "$api_id" ]; then
-	echo 'Creating test environment...'
-
-	# cleanup stray containers
-	teardown $IMAGE_NAME $db_id $api_id
-
-	# rebuild
-	build $IMAGE_NAME
-
-	db_id=$(rundb '-p 5431:5432')
-	echo $db_id >"$CONFIG_FILE"
-
-	redis_id=$(runredis '-p 6378:6379')
-	echo $redis_id >>"$CONFIG_FILE"
-
-	loki_id=$(runloki '-p 3100:3100')
-	echo $loki_id >>"$CONFIG_FILE"
-
-	api_id=$(runapi $IMAGE_NAME $db_id $redis_id $loki_id " -p 9228:9229 -v $(pwd):/usr/src/app")
-	echo $api_id >>"$CONFIG_FILE"
-
-	# run prettier once before the initial setup, so that `npm run lint` does not fail
-	npm run prettify
-
-	setup $api_id
-else
-	docker start $db_id $redis_id $loki_id $api_id
-fi
-
-echo '-----------------------------------------------------------------------'
-echo 'Using containers:'
-echo "  API: $api_id"
-echo "   DB: $db_id"
-echo "Redis: $redis_id"
-echo " Loki: $loki_id"
-echo '-----------------------------------------------------------------------'
-
-echo 'Clearing database'
-docker exec $db_id /bin/sh -c "psql --username=docker --dbname=postgres --command='DROP SCHEMA \"public\" CASCADE; CREATE SCHEMA \"public\";'"
-
-echo 'Clearing Redis'
-docker exec $redis_id /bin/sh -c "redis-cli flushall"
-
+echo "Execute tests"
 if [[ -z "$test_files" ]]; then
 	echo "Running all tests"
 else
-	echo "Running tests:$test_files"
+	echo "Running tests: $test_files"
 fi
 if [[ -z "$test_versions" ]]; then
 	echo "Running all versions"
 else
-	echo "Running versions:$test_versions"
+	echo "Running versions: $test_versions"
 fi
 
-docker exec ${extra_env} --env TEST_VERSIONS="$test_versions" --env TEST_FILES="$test_files" -it $api_id ./node_modules/.bin/mocha --bail ${extra_args}
+docker-compose exec ${extra_env} --env TEST_VERSIONS="$test_versions" --env TEST_FILES="$test_files" api-fasttest npx mocha --bail ${extra_args}

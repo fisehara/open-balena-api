@@ -10,6 +10,10 @@ jobs:
       DOCKER_IMAGE: balena/open-balena-api
     steps:
       - checkout
+      - run:
+          name: Install Docker Compose
+          command: |
+            apk add docker-compose
       - setup_remote_docker:
           version: 19.03.8
       - run:
