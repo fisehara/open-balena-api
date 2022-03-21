@@ -1,4 +1,16 @@
 - commits:
+    - subject: Use the existing redis instance for the multi-level-store
+      hash: f0616e2f3a5b9ed9ff049ee2491208d75558e3fb
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Pagan Gazzard
+      nested: []
+  version: 0.197.2
+  title: "'Use the existing redis instance for the multi-level-store'"
+  date: 2022-03-21T12:11:39.024Z
+- commits:
     - subject: Fix random name generator
       hash: a5ffed1ef196d98ff9920ca108c633305b217fd5
       body: |
