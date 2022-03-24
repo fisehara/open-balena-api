@@ -1,4 +1,18 @@
 - commits:
+    - subject: Separate test from init
+      hash: fb7483560942bc9583c54d3807f7b4a7f26b4b31
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Harald Fischer <harald@balena.io>
+        signed-off-by: Harald Fischer <harald@balena.io>
+      author: Harald Fischer
+      nested: []
+  version: 0.200.1
+  title: "'Separate test from init'"
+  date: 2022-03-24T14:42:07.491Z
+- commits:
     - subject: Add support for using a redis cluster for device logs
       hash: eb82a8ca1e482e73f114517b3c2ce191f3e0d531
       body: ""
