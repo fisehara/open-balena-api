@@ -1,4 +1,18 @@
 - commits:
+    - subject: "registry: Resolve image aliases when builder token is used"
+      hash: 65f6055ebc3b6247ec662301a56294dd0cbd1bda
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 0.202.4
+  title: "'registry: Resolve image aliases when builder token is used'"
+  date: 2022-04-04T19:04:21.099Z
+- commits:
     - subject: Fix lua syntax
       hash: e273c04bce24b7abdeb3314a2e33429c7bc3cd3c
       body: ""
