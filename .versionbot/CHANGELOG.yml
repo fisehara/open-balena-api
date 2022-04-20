@@ -1,4 +1,21 @@
 - commits:
+    - subject: Add `SUPERVISOR_REPORT_INTERVAL` config var Allows controlling how
+        frequently a device reports its current state
+      hash: ba4ceb22ab3594eb935d88a2fffc0e16be5b7e1a
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Connects-to: https://github.com/balena-os/balena-supervisor/pull/1910
+        connects-to: https://github.com/balena-os/balena-supervisor/pull/1910
+        Signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+        signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+      author: 20k-ultra
+      nested: []
+  version: 0.207.0
+  title: "'Add  config var'"
+  date: 2022-04-20T02:17:16.524Z
+- commits:
     - subject: Consider devices with heartbeats to be out of the pre-provisioning state
       hash: e736279f3e2cbccc95a1a904d081d9a5b67817bb
       body: ""
