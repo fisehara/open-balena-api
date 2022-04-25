@@ -1,4 +1,25 @@
 - commits:
+    - subject: Update config-to-label transform to include `BALENA_*` vars
+      hash: 2588ee3803751eecf8a38b9dacc0c09236c53f0a
+      body: >
+        [Documentation](https://www.balena.io/docs/learn/deploy/release-strategy/update-strategies/#controlling-the-update-strategy)
+
+        mentions `BALENA_SUPERVISOR_UPDATE_STRATEGY` config var
+
+        as a way to set the update strategy, but this var has no effect as there
+
+        is no transform setup for it (there is only one for for `RESIN_` prefix).
+      footer:
+        Change-type: patch
+        change-type: patch
+        Closes: "#735"
+        closes: "#735"
+      author: Felipe Lalanne
+      nested: []
+  version: 0.206.3
+  title: "'Update config-to-label transform to include  vars'"
+  date: 2022-04-25T18:27:33.380Z
+- commits:
     - subject: Move some state-patch-v2 preprocessing out of the transaction
       hash: b63959461ecaf3e7aee1c1a9c5acf58aef1bc30c
       body: ""
