@@ -1,4 +1,27 @@
 - commits:
+    - subject: Add release_policy computed fact type
+      hash: ad5c442e5bc74ab498b425cc998c2a3514c1dc57
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Andrea Rosci <andrear@balena.io>
+        signed-off-by: Andrea Rosci <andrear@balena.io>
+      author: JSReds
+      nested: []
+    - subject: Optimize the release resolution in state v2 PATCH endpoint
+      hash: b3c556d2f1df6163d578906beb6d6424301ae597
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      author: Thodoris Greasidis
+      nested: []
+  version: 0.208.0
+  date: 2022-05-11T12:46:26.035Z
+- commits:
     - subject: Change the device type local cache timeout to 5 minutes
       hash: 08e575411d5bb5cd45e84cd6e7ab06c8e8f48ddc
       body: ""
