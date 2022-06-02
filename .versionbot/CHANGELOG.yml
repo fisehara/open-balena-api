@@ -1,4 +1,15 @@
 - commits:
+    - subject: Add device configuration setting for terminating TLS on the device.
+      hash: 321d7f019bcf46721cf0da0de81d957fe2f33888
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Pranav Peshwe
+      nested: []
+  version: 0.208.0
+  date: 2022-06-02T11:04:06.069Z
+- commits:
     - subject: Sort some sbvr terms alphabetically
       hash: 8422e14e3268be235b241a1222aa742891c5c2a5
       body: ""
