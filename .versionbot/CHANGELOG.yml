@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update nock from 13.2.4 to 13.2.6
+      hash: a58030afd9b92e4c332d3fa37d828566e03f6759
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 0.208.4
+  title: "'Update nock from 13.2.4 to 13.2.6'"
+  date: 2022-06-13T19:47:53.205Z
+- commits:
     - subject: Add test for the release update progress
       hash: 13c23a730f248083a66f7d4d7a2dd55b7b5a9b14
       body: ""
