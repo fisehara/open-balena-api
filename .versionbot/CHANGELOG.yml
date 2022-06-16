@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update lint-staged from 12.4.0 to 12.5.0
+      hash: d841ef14c03b4483a65a82a565bed94f846c507f
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Renovate Bot
+      nested: []
+  version: 0.210.0
+  title: "'Update lint-staged from 12.4.0 to 12.5.0'"
+  date: 2022-06-16T14:48:14.716Z
+- commits:
     - subject: "auth: Limit password length to 64 characters"
       hash: a616af49c19937c734d387a0bbcbcf3f3ba0f4b3
       body: ""
