@@ -1,4 +1,26 @@
 - commits:
+    - subject: Update supertest from 6.2.2 to 6.2.3
+      hash: 4aeeb33c46775d3803867c16dcfef54847894a96
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+    - subject: "repo.yml: Use module names that match renovate's depName"
+      hash: 4a2b0126af322922667e091461040134bccb364c
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      author: Thodoris Greasidis
+      nested: []
+  version: 0.209.1
+  title: "'Update supertest from 6.2.2 to 6.2.3'"
+  date: 2022-06-16T20:19:35.230Z
+- commits:
     - subject: "auth: Limit password length to 64 characters"
       hash: a616af49c19937c734d387a0bbcbcf3f3ba0f4b3
       body: ""
