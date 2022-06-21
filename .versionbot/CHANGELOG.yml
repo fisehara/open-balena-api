@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add index to optimize hostApp app rule
+      hash: b40ea9a698a6c888878f1b7898a7db273c358260
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      author: Thodoris Greasidis
+      nested: []
+  version: 2.0.1
+  title: "'Add index to optimize hostApp app rule'"
+  date: 2022-06-21T15:58:08.946Z
+- commits:
     - subject: Update sinon from 13.0.2 to 14.0.0
       hash: 0f4ded36b3f6e39064d3036a9424840e19e30003
       body: ""
