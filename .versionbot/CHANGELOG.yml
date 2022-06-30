@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency passport to 0.6.0
+      hash: 6e5b9ceca40ea0f9c3a232a562a79a482bacdfed
+      body: |
+        Update passport to 0.6.0
+
+        Update passport from 0.5.3 to 0.6.0
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Renovate Bot
+      nested: []
+  version: 2.1.0
+  title: "'Update dependency passport to 0.6.0'"
+  date: 2022-06-30T22:12:53.303Z
+- commits:
     - subject: Update dependencies
       hash: cb4ed636b5b6d1a1ecb03309d4336daf6189dbe3
       body: |
