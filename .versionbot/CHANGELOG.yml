@@ -1,4 +1,34 @@
 - commits:
+    - subject: Added build to resinci Added the no-systemd variant to resinci
+      hash: 8abc2ca1e5cb09a535f03689716c514e575996d8
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Robbe Haesendonck
+      nested: []
+    - subject: Created 2 seperate dockerfiles To allow building the no-systemd variant
+        in parallell
+      hash: f0dd28d0eb6f5211bfb1ecad740e091b790a8cd9
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Robbe Haesendonck
+      nested: []
+    - subject: Removed systemd from container
+      hash: b6e90f76786b6e5a1e63eba5926385df931946e3
+      body: |
+        Removed systemd from open-balena-api.
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Robbe Haesendonck
+      nested: []
+  version: 3.4.0
+  title: "'Removed systemd from container'"
+  date: 2022-07-26T08:57:34.641Z
+- commits:
     - subject: Fix Husky not working after v4 to v8 update
       hash: bd8d089de3d4742499672f3649cf92a07999462a
       body: ""
