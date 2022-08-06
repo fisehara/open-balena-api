@@ -1,4 +1,30 @@
 - commits:
+    - subject: "vars-update-trigger: Fix 42P01 error when the affected envs are too
+        many"
+      hash: 7cedf52b21e5a88cfe05ef98980e49469ccc4b41
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        See: https://www.flowdock.com/app/rulemotion/public-s-community/threads/GrL4sR7imv_sfdTqZsgu80lMvpg
+        see: https://www.flowdock.com/app/rulemotion/public-s-community/threads/GrL4sR7imv_sfdTqZsgu80lMvpg
+        Signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      author: Thodoris Greasidis
+      nested: []
+    - subject: Add tests for supervisor notification after deleting variables
+      hash: 62826978823e4ab04e38eb00d1ff081064f67440
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      author: Thodoris Greasidis
+      nested: []
+  version: 3.4.1
+  date: 2022-08-06T10:18:51.149Z
+- commits:
     - subject: Truncate ip and mac addresses from Supervisor state patches
       hash: 1af021eed988be9a6b357ffe55487ae78095d34b
       body: >
