@@ -26,13 +26,15 @@
     "prepack": "npm run build",
     "test": "IMAGE_NAME=test-open-balena-api ./automation/test.sh",
     "posttest": "docker rmi test-open-balena-api",
-    "prepare": "[ \"$HUSKY\" = 0 ] || husky install"
+    "prepare": "[ \"$HUSKY\" = 0 ] || husky install",
+    "serve-openapi": "redoc-cli serve --ssr ./example-openapi.json",
+    "build-openapi": "redoc-cli build ./example-openapi.json"
   },
   "dependencies": {
     "@balena/abstract-sql-compiler": "^7.20.0",
     "@balena/es-version": "^1.0.1",
     "@balena/node-metrics-gatherer": "^6.0.3",
-    "@balena/pinejs": "^14.48.0",
+    "@balena/pinejs": "14.50.0-odata-metadata-json-dbd8d4b1c1b8823be2e600498d75212069c82708",
     "@sentry/node": "^7.8.1",
     "@types/basic-auth": "^1.1.3",
     "@types/bluebird": "^3.5.36",
@@ -130,6 +132,7 @@
     "mockery": "^2.1.0",
     "nock": "^13.2.9",
     "pinejs-client-supertest": "^1.3.3",
+    "redoc-cli": "^0.13.18",
     "rimraf": "^3.0.2",
     "sinon": "^14.0.0",
     "supertest": "^6.2.4"
