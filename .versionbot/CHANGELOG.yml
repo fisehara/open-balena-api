@@ -1,4 +1,17 @@
 - commits:
+    - subject: Utilise docker-compose to control test dependency
+      hash: 21c92ac1d192ec3e2ff877fd5c76d71d1486bb4b
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Harald Fischer <harald@balena.io>
+        signed-off-by: Harald Fischer <harald@balena.io>
+      author: Harald Fischer
+      nested: []
+  version: 3.6.0
+  date: 2022-08-15T09:11:17.353Z
+- commits:
     - subject: Allow trusted ips to make http connections with x-forwarded-proto
       hash: 40ca893b60fa3093e7d08ceeab2d049c517c5861
       body: ""
