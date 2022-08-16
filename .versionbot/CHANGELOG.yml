@@ -1,4 +1,33 @@
 - commits:
+    - subject: Added build to resinci Added the no-systemd variant to resinci
+      hash: 8abc2ca1e5cb09a535f03689716c514e575996d8
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Robbe Haesendonck
+      nested: []
+    - subject: Created 2 seperate dockerfiles To allow building the no-systemd variant
+        in parallell
+      hash: f0dd28d0eb6f5211bfb1ecad740e091b790a8cd9
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Robbe Haesendonck
+      nested: []
+    - subject: Removed systemd from container
+      hash: b6e90f76786b6e5a1e63eba5926385df931946e3
+      body: |
+        Removed systemd from open-balena-api.
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Robbe Haesendonck
+      nested: []
+  version: 4.1.0
+  date: 2022-08-16T14:15:03.699Z
+- commits:
     - subject: Use @balena/env-parsing for shared env var parsing behavior
       hash: 387f438ebb8fc6d625f2eb49d66ff04691b3c3c9
       body: ""
