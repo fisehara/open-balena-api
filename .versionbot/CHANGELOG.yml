@@ -1,4 +1,19 @@
 - commits:
+    - subject: Default fleet state compatible to device state v3
+      hash: df0dda461a3b2c224b4c7154bb741906b7cfbede
+      body: |
+        resolves #1071
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Harald Fischer <harald@balena.io>
+        signed-off-by: Harald Fischer <harald@balena.io>
+      author: Harald Fischer
+      nested: []
+  version: 4.1.0
+  title: "'Device v3 compatible fleet default state'"
+  date: 2022-08-17T17:28:11.532Z
+- commits:
     - subject: Remove misleading date header removal for supervisor requests
       hash: 41ec5001a218c850f345e03353c441a8c2457ba6
       body: |
