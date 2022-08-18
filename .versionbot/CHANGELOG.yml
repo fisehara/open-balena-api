@@ -1,4 +1,18 @@
 - commits:
+    - subject: Testing openapi spec endpoint and render to static html page
+      hash: 938026237b2961711f1dd2772dd2b19a66f45c72
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Harald Fischer <harald@balena.io>
+        signed-off-by: Harald Fischer <harald@balena.io>
+      author: Harald Fischer
+      nested: []
+  version: 3.5.0
+  title: "'test'"
+  date: 2022-08-18T21:14:24.069Z
+- commits:
     - subject: Change forEach to for..of for truncateShortText
       hash: 2bca642bdad52e7eaaf6080188871ecc283aa72a
       body: ""
