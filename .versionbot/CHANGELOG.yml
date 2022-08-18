@@ -1,4 +1,33 @@
 - commits:
+    - subject: Update balena/open-balena-base Docker tag to v13.5.0
+      hash: 982e10a24df5f883c5bbb6a156b8dd75f44522af
+      body: |
+        Update balena/open-balena-base to 13.5.0
+
+        Update balena/open-balena-base from 13.4.0 to 13.5.0
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Renovate Bot
+      nested:
+        - commits:
+            - subject: Update balenalib/amd64-debian-node Docker tag to v16.17.0
+              hash: def1d2e6db189ce01390bd48c3c99a2fadf5486a
+              body: |
+                Update balenalib/amd64-debian-node to 16.17.0
+
+                Update balenalib/amd64-debian-node from 16.16.0 to 16.17.0
+              footer:
+                Change-type: minor
+                change-type: minor
+              author: Renovate Bot
+              nested: []
+          version: open-balena-base-13.5.0
+          title: "'Update balenalib/amd64-debian-node Docker tag to v16.17.0'"
+          date: 2022-08-18T20:08:44.059Z
+  version: 4.1.0
+  date: 2022-08-18T20:43:51.031Z
+- commits:
     - subject: Remove misleading date header removal for supervisor requests
       hash: 41ec5001a218c850f345e03353c441a8c2457ba6
       body: |
